@@ -246,7 +246,12 @@
                             <script type="text/javascript">
                                     var d = new Date();
                                     var n = d.getMonth();
-                                        for(count = 0; count < n; count++){
+									if (GetUrlValue('Yr')==2015)
+										{
+										 n = 12;
+										}
+                                        for(count = 0; count < n; count++)
+										{
                                         document.write('<a id="reset" class="reset btn btn-primary btn-sm" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2015,' + count + ', 1), new Date(2015, ' + count + ', 31)]); dc.redrawAll();">');
                                         document.write(monthNames[count] + "</a> &nbsp;");
                                         }
@@ -673,6 +678,7 @@
                 }
                 var d = new Date();
                 var n = d.getMonth();
+
                 dc.filterAll();
                  monthrange_chart.filter([new Date(2015, n-1, 1), new Date(2015, n-1, 31)]);
                 dc.redrawAll();
