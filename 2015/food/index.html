@@ -108,9 +108,29 @@
                         <BR>
 						<center>
 						Select Year &nbsp;
+												
+						
 						<select name=yr style="background-color:#00B26B" onchange="myYear(this)">
-							<option value=2016 style="background-color:#00B26B">2016 </option>													
-							<option value=2015 style="background-color:#00B26B">2015 </option>
+							
+							<script type="text/javascript">
+							if (GetUrlValue('Yr')==2016)
+							{
+							document.write("<option value=2016 style='background-color:#00B26B' selected = 'selected'>2016 </option>	");
+							document.write("<option value=2015 style='background-color:#00B26B'>2015 </option>	");							
+							}
+							else if (GetUrlValue('Yr')==2015)
+							{
+							document.write("<option value=2016 style='background-color:#00B26B'>2016 </option>	");							
+							document.write("<option value=2015 style='background-color:#00B26B' selected = 'selected'>2015 </option>	");
+							}
+							else
+							{
+							document.write("<option value=2016 style='background-color:#00B26B' selected = 'selected'>2016 </option>	");
+							document.write("<option value=2015 style='background-color:#00B26B'>2015 </option>	");							
+						
+							}
+							</script>
+							>2015 </option>
 						</select>
                        </center>
                     </div>
